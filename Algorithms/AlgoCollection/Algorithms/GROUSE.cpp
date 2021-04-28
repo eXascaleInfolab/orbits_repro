@@ -180,6 +180,7 @@ void GROUSE::singleRowIncrementSAGE()
     const uint64_t i = lastIndex; // last idx, single inc only, so no modifications within one call
     arma::uvec Omega_t = arma::find_finite(input.col(i)); // not int the list like it was in grouse, calculate now
     arma::vec v_t = input.col(i); // new vector
+    if (Omega_t.n_elem < maxrank + 1) exit(-1);
     
     // --- preprocessing ---
     // compute remaining input for SAGE with typical grouse step, for docs see above

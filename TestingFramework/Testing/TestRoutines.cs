@@ -1199,7 +1199,8 @@ namespace TestingFramework.Testing
 
             if (es.IsBlackout())
             {
-                algorithms = algorithms.Where(x => x.IsBlackout);
+                
+                //algorithms = algorithms.Where(x => x.IsBlackout);
             }
 
             if (nlimit < 1000)
@@ -1269,7 +1270,7 @@ namespace TestingFramework.Testing
                     alg.RunExperiment(ex, et, es, data, tcase);
                 }
 
-                alg.CollectResults(ex, DataWorks.FolderResults,
+                alg.CollectResults(ex, DataWorks.FolderResults, (nlimit, dataSetColumns),
                     lengths.Select(x => alg.EnumerateOutputFiles(x)).Flatten().ToArray());
             }
 
@@ -1514,7 +1515,7 @@ namespace TestingFramework.Testing
 
             if (es.IsBlackout())
             {
-                algorithms = algorithms.Where(x => x.IsBlackout);
+                //algorithms = algorithms.Where(x => x.IsBlackout);
             }
 
             if (nlimit < 1000)
@@ -1584,7 +1585,7 @@ namespace TestingFramework.Testing
                     alg.RunExperiment(ex, et, es, data, tcase);
                 }
 
-                alg.CollectResults(ex, DataWorks.FolderResults,
+                alg.CollectResults(ex, DataWorks.FolderResults, (nlimit, dataSetColumns),
                     lengths.Select(x => alg.EnumerateOutputFiles(x)).Flatten().ToArray());
             }
             

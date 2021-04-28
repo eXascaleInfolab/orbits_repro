@@ -90,7 +90,7 @@ namespace TestingFramework.Algorithms
             }
         }
         
-        public void CollectResults(Experiment ex, string destFolder, params string[] files)
+        public void CollectResults(Experiment ex, string destFolder, ValueTuple<int, int> size, params string[] files)
         {
             switch (ex)
             {
@@ -103,6 +103,14 @@ namespace TestingFramework.Algorithms
                         if (File.Exists(dest))
                         {
                             File.Delete(dest);
+                        }
+                        
+                        if (!File.Exists(src))
+                        {
+                            double bigval = 10000.0;
+                            File.AppendAllLines(src,
+                                Enumerable.Repeat(Enumerable.Repeat(bigval.ToString(), size.Item2).StringJoin(), size.Item1).ToArray()
+                            );
                         }
 
                         File.Copy(src, dest);
@@ -118,6 +126,11 @@ namespace TestingFramework.Algorithms
                         if (File.Exists(dest))
                         {
                             File.Delete(dest);
+                        }
+                        
+                        if (!File.Exists(src))
+                        {
+                            File.AppendAllText(src, "-1000000"); // -1 sec
                         }
 
                         File.Copy(src, dest);
