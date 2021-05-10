@@ -61,6 +61,110 @@ int64_t Recovery_CD(arma::mat &mat, uint64_t truncation)
     return result;
 }
 
+int64_t Recovery_CD2(arma::mat &mat, uint64_t truncation)
+{
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(mat, 1);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = false;
+    rmv.useNormalization = false;
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS-LONG): " << result << std::endl;
+    
+    verifyRecovery(mat);
+    return result;
+}
+
+int64_t Recovery_CD_SSV(arma::mat &mat, uint64_t truncation)
+{
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(mat);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = true;
+    rmv.useNormalization = false;
+    rmv.passSignVectorStrategy(CDSignVectorStrategy_2::ISSVBase);
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS[SSV]): " << result << std::endl;
+    
+    verifyRecovery(mat);
+    return result;
+}
+
+
+
+int64_t Recovery_CD_SSVi(arma::mat &mat, uint64_t truncation)
+{
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(mat);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = false;
+    rmv.useNormalization = false;
+    rmv.passSignVectorStrategy(CDSignVectorStrategy_2::ISSVBase);
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS[SSVi]): " << result << std::endl;
+    
+    verifyRecovery(mat);
+    return result;
+}
+
+int64_t Recovery_CD_ASV(arma::mat &mat, uint64_t truncation)
+{
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(mat);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = true;
+    rmv.useNormalization = false;
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS[ASV]): " << result << std::endl;
+    
+    verifyRecovery(mat);
+    return result;
+}
+
 int64_t Recovery_TKCM(arma::mat &mat, uint64_t truncation)
 {
     (void) truncation;
@@ -231,6 +335,228 @@ int64_t Recovery_CD_Streaming(arma::mat &mat, uint64_t truncation)
     
     result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
     std::cout << "Time (ORBITS,stream): " << result << std::endl;
+    
+    mat = std::move(before_streaming);
+    verifyRecovery(mat);
+    return result;
+}
+
+int64_t Recovery_CD2_Streaming(arma::mat &mat, uint64_t truncation)
+{
+    uint64_t streamStart = 0;
+    
+    for (uint64_t i = 0; i < mat.n_rows; ++i)
+    {
+        if (std::isnan(mat.at(i, 0)))
+        {
+            streamStart = i;
+            break;
+        }
+    }
+    
+    uint64_t cutoff10 = mat.n_rows - (mat.n_rows / 10);
+    streamStart = std::min(streamStart, cutoff10);
+    
+    arma::mat before_streaming = mat.submat(arma::span(0, streamStart - 1), arma::span::all);
+    
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(before_streaming, 1);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = false;
+    rmv.useNormalization = false;
+    
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    
+    rmv.increment_raw(mat.n_rows - streamStart);
+    
+    for (uint64_t i = streamStart; i < mat.n_rows; ++i)
+    {
+        for (uint64_t j = 0; j < mat.n_cols; ++j)
+        {
+            before_streaming.at(i, j) = mat.at(i, j);
+        }
+    }
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS-LONG,stream): " << result << std::endl;
+    
+    mat = std::move(before_streaming);
+    verifyRecovery(mat);
+    return result;
+}
+
+int64_t Recovery_CD_Streaming_SSV(arma::mat &mat, uint64_t truncation)
+{
+    uint64_t streamStart = 0;
+    
+    for (uint64_t i = 0; i < mat.n_rows; ++i)
+    {
+        if (std::isnan(mat.at(i, 0)))
+        {
+            streamStart = i;
+            break;
+        }
+    }
+    
+    uint64_t cutoff10 = mat.n_rows - (mat.n_rows / 10);
+    streamStart = std::min(streamStart, cutoff10);
+    
+    arma::mat before_streaming = mat.submat(arma::span(0, streamStart - 1), arma::span::all);
+    
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(before_streaming);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = true;
+    rmv.useNormalization = false;
+    rmv.passSignVectorStrategy(CDSignVectorStrategy_2::ISSVBase);
+    
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    
+    rmv.increment_raw(mat.n_rows - streamStart);
+    
+    for (uint64_t i = streamStart; i < mat.n_rows; ++i)
+    {
+        for (uint64_t j = 0; j < mat.n_cols; ++j)
+        {
+            before_streaming.at(i, j) = mat.at(i, j);
+        }
+    }
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS[SSV],stream): " << result << std::endl;
+    
+    mat = std::move(before_streaming);
+    verifyRecovery(mat);
+    return result;
+}
+
+int64_t Recovery_CD_Streaming_SSVi(arma::mat &mat, uint64_t truncation)
+{
+    uint64_t streamStart = 0;
+    
+    for (uint64_t i = 0; i < mat.n_rows; ++i)
+    {
+        if (std::isnan(mat.at(i, 0)))
+        {
+            streamStart = i;
+            break;
+        }
+    }
+    
+    uint64_t cutoff10 = mat.n_rows - (mat.n_rows / 10);
+    streamStart = std::min(streamStart, cutoff10);
+    
+    arma::mat before_streaming = mat.submat(arma::span(0, streamStart - 1), arma::span::all);
+    
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(before_streaming);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = false;
+    rmv.useNormalization = false;
+    rmv.passSignVectorStrategy(CDSignVectorStrategy_2::ISSVBase);
+    
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    
+    rmv.increment_raw(mat.n_rows - streamStart);
+    
+    for (uint64_t i = streamStart; i < mat.n_rows; ++i)
+    {
+        for (uint64_t j = 0; j < mat.n_cols; ++j)
+        {
+            before_streaming.at(i, j) = mat.at(i, j);
+        }
+    }
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS[SSVi],stream): " << result << std::endl;
+    
+    mat = std::move(before_streaming);
+    verifyRecovery(mat);
+    return result;
+}
+
+int64_t Recovery_CD_Streaming_ASV(arma::mat &mat, uint64_t truncation)
+{
+    uint64_t streamStart = 0;
+    
+    for (uint64_t i = 0; i < mat.n_rows; ++i)
+    {
+        if (std::isnan(mat.at(i, 0)))
+        {
+            streamStart = i;
+            break;
+        }
+    }
+    
+    uint64_t cutoff10 = mat.n_rows - (mat.n_rows / 10);
+    streamStart = std::min(streamStart, cutoff10);
+    
+    arma::mat before_streaming = mat.submat(arma::span(0, streamStart - 1), arma::span::all);
+    
+    // Local
+    int64_t result;
+    CDMissingValueRecovery rmv(before_streaming);
+    std::chrono::steady_clock::time_point begin;
+    std::chrono::steady_clock::time_point end;
+    
+    // Recovery
+    rmv.setReduction(truncation);
+    rmv.disableCaching = false;
+    rmv.useNormalization = false;
+    
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    
+    rmv.increment_raw(mat.n_rows - streamStart);
+    
+    for (uint64_t i = streamStart; i < mat.n_rows; ++i)
+    {
+        for (uint64_t j = 0; j < mat.n_cols; ++j)
+        {
+            before_streaming.at(i, j) = mat.at(i, j);
+        }
+    }
+    
+    begin = std::chrono::steady_clock::now();
+    rmv.autoDetectMissingBlocks();
+    rmv.performRecovery(truncation == mat.n_cols);
+    end = std::chrono::steady_clock::now();
+    
+    result = std::chrono::duration_cast<std::chrono::microseconds>(end - begin).count();
+    std::cout << "Time (ORBITS[ASV],stream): " << result << std::endl;
     
     mat = std::move(before_streaming);
     verifyRecovery(mat);
@@ -435,6 +761,22 @@ int64_t Recovery(arma::mat &mat, uint64_t truncation,
         {
             return Recovery_CD_Streaming(mat, truncation);
         }
+        else if (algorithm == "cd2")
+        {
+            return Recovery_CD2_Streaming(mat, truncation);
+        }
+        else if (algorithm == "cd-ssv")
+        {
+            return Recovery_CD_Streaming_SSV(mat, truncation);
+        }
+        else if (algorithm == "cd-ssvi")
+        {
+            return Recovery_CD_Streaming_SSVi(mat, truncation);
+        }
+        else if (algorithm == "cd-asv")
+        {
+            return Recovery_CD_Streaming_ASV(mat, truncation);
+        }
         else if (algorithm == "tkcm")
         {
             return Recovery_TKCM_Streaming(mat, truncation);
@@ -465,6 +807,22 @@ int64_t Recovery(arma::mat &mat, uint64_t truncation,
     if (algorithm == "cd")
     {
         return Recovery_CD(mat, truncation);
+    }
+    else if (algorithm == "cd2")
+    {
+        return Recovery_CD2(mat, truncation);
+    }
+    else if (algorithm == "cd-ssv")
+    {
+        return Recovery_CD_SSV(mat, truncation);
+    }
+    else if (algorithm == "cd-ssvi")
+    {
+        return Recovery_CD_SSVi(mat, truncation);
+    }
+    else if (algorithm == "cd-asv")
+    {
+        return Recovery_CD_ASV(mat, truncation);
     }
     else if (algorithm == "tkcm")
     {

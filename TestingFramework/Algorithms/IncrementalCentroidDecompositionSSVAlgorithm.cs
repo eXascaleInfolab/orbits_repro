@@ -2,72 +2,86 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Text;
 using TestingFramework.Testing;
 
 namespace TestingFramework.Algorithms
 {
-    public partial class PCAMMEAlgorithm : Algorithm
+    public partial class IncrementalCentroidDecompositionSSVAlgorithm : Algorithm
     {
-        private static bool _init = false;
-        public PCAMMEAlgorithm() : base(ref _init)
-        { }
+        public List<int> KList = new List<int>(new[] { 3, 2 });
 
-        public override string[] EnumerateInputFiles(string dataCode, int tcase)
-        {
-            return new[] { $"{dataCode}_m{tcase}.txt" };
-        }
+        private static bool _init = false;
+        public IncrementalCentroidDecompositionSSVAlgorithm() : base(ref _init)
+        { }
         
-        private static string Style => "linespoints lt 8 dt 1 lw 2 pt 8 lc rgbcolor \"black\" pointsize 1.2";
+        public override string[] EnumerateOutputFiles(int tcase)
+        {
+            return KList.Select(k => $"{AlgCode}{tcase}_k{k}.txt").ToArray();
+        }
+
+        private static string StyleOf(int k) =>
+            "linespoints lt 8 lw 3 pt 7 lc rgbcolor \"" + (k == 2 ? "pink" : "purple") + $"\" pointsize 1.2";
 
         public override IEnumerable<SubAlgorithm> EnumerateSubAlgorithms()
         {
-            return new[] { new SubAlgorithm($"{AlgCode}", String.Empty, Style) };
+            return KList.Select(k => new SubAlgorithm($"{AlgCode}_k{k}", String.Empty, StyleOf(k)));
         }
 
         public override IEnumerable<SubAlgorithm> EnumerateSubAlgorithms(int tcase)
         {
-            return new[] { new SubAlgorithm($"{AlgCode}", $"{AlgCode}{tcase}", Style) };
+            return KList.Select(k => new SubAlgorithm($"{AlgCode}_k{k}", $"{AlgCode}{tcase}_k{k}", StyleOf(k)));
         }
         
         protected override void PrecisionExperiment(ExperimentType et, ExperimentScenario es,
             DataDescription data, int tcase)
         {
-            Run(et == ExperimentType.Streaming
-                ? GetOnlineProcess(data, tcase, Experiment.Precision)
-                : GetOfflineProcess(data, tcase, Experiment.Precision));
+            if (et == ExperimentType.Streaming)
+            {
+                KList.ForEach(k => Run(GetOnlineProcess(data, tcase, k, Experiment.Precision)));
+            }
+            else
+            {
+                KList.ForEach(k => Run(GetOfflineProcess(data, tcase, k, Experiment.Precision)));
+            }
         }
 
-        protected override void RuntimeExperiment(ExperimentType et, ExperimentScenario es, DataDescription data,
-            int tcase)
+        protected override void RuntimeExperiment(ExperimentType et, ExperimentScenario es,
+            DataDescription data, int tcase)
         {
-            Run(et == ExperimentType.Streaming
-                ? GetOnlineProcess(data, tcase, Experiment.Runtime)
-                : GetOfflineProcess(data, tcase, Experiment.Runtime));
+            if (et == ExperimentType.Streaming)
+            {
+                KList.ForEach(k => Run(GetOnlineProcess(data, tcase, k, Experiment.Runtime)));
+            }
+            else
+            {
+                KList.ForEach(k => Run(GetOfflineProcess(data, tcase, k, Experiment.Runtime)));
+            }
         }
 
-        private Process GetOfflineProcess(DataDescription data, int len, Experiment ex)
+        private Process GetOfflineProcess(DataDescription data, int len, int k, Experiment ex)
         {
             string test = ex == Experiment.Precision ? "o" : "rt";
             Process proc = TemplateProcess();
             proc.StartInfo.FileName = EnvPath + "../cmake-build-debug/incCD";
             
-            proc.StartInfo.Arguments = $"-alg pca-mme -test {test} -n {data.N} -m {data.M} -k {AlgoPack.TypicalTruncation} " +
-                                       $"-in ./{SubFolderDataIn}{data.Code}_m{len}.txt " +
-                                       $"-out ./{SubFolderDataOut}{AlgCode}{len}.txt";
+            proc.StartInfo.Arguments = $"-alg cd-ssv -test {test} -n {data.N} -m {data.M} -k {k} " +
+                                         $"-in ./{SubFolderDataIn}{data.Code}_m{len}.txt " +
+                                         $"-out ./{SubFolderDataOut}{AlgCode}{len}_k{k}.txt";
 
             return proc;
         }
 
-        private Process GetOnlineProcess(DataDescription data, int len, Experiment ex)
+        private Process GetOnlineProcess(DataDescription data, int len, int k, Experiment ex)
         {
             string test = ex == Experiment.Precision ? "o" : "rt";
             Process proc = TemplateProcess();
             proc.StartInfo.FileName = EnvPath + "../cmake-build-debug/incCD";
 
-            proc.StartInfo.Arguments = $"-alg pca-mme -test {test} -n {data.N} -m {data.M} -k {AlgoPack.TypicalTruncation} " +
-                                       $"-in ./{SubFolderDataIn}{data.Code}_m{len}.txt " +
-                                       $"-out ./{SubFolderDataOut}{AlgCode}{len}.txt" + " -xtra stream";
+            proc.StartInfo.Arguments = $"-alg cd-ssv -test {test} -n {data.N} -m {data.M} -k {k} " +
+                                         $"-in ./{SubFolderDataIn}{data.Code}_m{len}.txt " +
+                                         $"-out ./{SubFolderDataOut}{AlgCode}{len}_k{k}.txt" + " -xtra stream";
 
             return proc;
         }

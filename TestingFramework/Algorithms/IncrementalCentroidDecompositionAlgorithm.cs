@@ -22,7 +22,7 @@ namespace TestingFramework.Algorithms
         }
 
         private static string StyleOf(int k) =>
-            "linespoints lt 8 lw 3 pt 7 lc rgbcolor \"" + (k == 2 ? "blue" : "cyan") + $"\" pointsize 1.2";
+            "linespoints lt 8 lw 3 pt 4 lc rgbcolor \"" + (k == 2 ? "dark-red" : "red") + $"\" pointsize 1.2";
 
         public override IEnumerable<SubAlgorithm> EnumerateSubAlgorithms()
         {

@@ -368,6 +368,8 @@ namespace TestingFramework.Testing
             string rmse = allAlgos.StringJoin(Environment.NewLine + "\t");
             string mse = rmse.Replace("RMSE", "MSE").Replace("rmse", "mse"); //strip R
             string mae = rmse.Replace("RMSE", "MAE").Replace("rmse", "mae"); //place mae
+            string hash_log = es == ExperimentScenario.Missing ? "" : "#";
+            string hash_log_inv = es == ExperimentScenario.Missing ? "#" : "";
             
             Utils.FileFindAndReplace(FolderResults + "plotfiles/template_mse.plt",
                 $"{FolderResults}plotfiles/out/{code}_mse.plt",
@@ -378,7 +380,9 @@ namespace TestingFramework.Testing
                 ("{caseTick}", caseTick.ToString()),
                 ("{rmse}", rmse),
                 ("{mse}", mse),
-                ("{mae}", mae));
+                ("{mae}", mae),
+                ("{hash_log}", hash_log),
+                ("{hash_log_inv}", hash_log_inv));
         }
         
         public static void GenerateRuntimeGnuPlot(IEnumerable<Algorithm> algorithms, string code, int caseStart, int caseEnd, int caseTick, ExperimentType et, ExperimentScenario es)

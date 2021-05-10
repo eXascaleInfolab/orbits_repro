@@ -441,6 +441,8 @@ arma::vec &CentroidDecomposition::findIncrementalSSVPlus(arma::mat &mx, uint64_t
         ++ssvIterations;
     }
     
+    directions[k] = (mx.t() * Z);
+    
     return Z;
 }
 
@@ -539,6 +541,8 @@ arma::vec &CentroidDecomposition::findIncrementalSSV(arma::mat &mx, uint64_t k)
         }
         ++ssvIterations;
     }
+    
+    directions[k] = (mx.t() * Z);
     
     return Z;
 }

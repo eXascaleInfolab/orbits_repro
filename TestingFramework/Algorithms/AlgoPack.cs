@@ -13,6 +13,10 @@ namespace TestingFramework.Algorithms
         
         // static
         public static readonly Algorithm InCd = new IncrementalCentroidDecompositionAlgorithm();
+        public static readonly Algorithm InCdSSV = new IncrementalCentroidDecompositionSSVAlgorithm();
+        public static readonly Algorithm InCdSSVi = new IncrementalCentroidDecompositionSSViAlgorithm();
+        public static readonly Algorithm InCdASV = new IncrementalCentroidDecompositionASVAlgorithm();
+        public static readonly Algorithm LongCd = new LongCentroidDecompositionAlgorithm();
         public static readonly Algorithm Tkcm = new TkcmAlgorithm();
         public static readonly Algorithm Spirit = new SpiritAlgorithm();
         public static readonly Algorithm Grouse = new GrouseAlgorithm();
@@ -24,7 +28,7 @@ namespace TestingFramework.Algorithms
         //example:
         //    public static readonly Algorithm Example = new ExampleAlgorithm();
         
-        public static Algorithm[] ListAlgorithms = { InCd, Tkcm, Spirit, Grouse, ArImp, Ssa, Mrnn, PcaMme }; //initial full list of all algos
+        public static Algorithm[] ListAlgorithms = { InCd, LongCd, InCdSSV, InCdSSVi, InCdASV, Tkcm, Spirit, Grouse, ArImp, Ssa, Mrnn, PcaMme }; //initial full list of all algos
         public static Algorithm[] ListAlgorithmsMulticolumn = null;
         public static Algorithm[] ListAlgorithmsStreaming = null;
 
@@ -75,6 +79,42 @@ namespace TestingFramework.Algorithms
     public partial class IncrementalCentroidDecompositionAlgorithm
     {
         public override string AlgCode => "orbits";
+        protected override string _EnvPath => $"{AlgoPack.GlobalAlgorithmsLocation}AlgoCollection/_data/";
+        protected override string SubFolderDataIn => "in/";
+        protected override string SubFolderDataOut => "out/";
+        public override bool IsStreaming => true;
+    }
+    
+    public partial class IncrementalCentroidDecompositionSSVAlgorithm
+    {
+        public override string AlgCode => "ssv";
+        protected override string _EnvPath => $"{AlgoPack.GlobalAlgorithmsLocation}AlgoCollection/_data/";
+        protected override string SubFolderDataIn => "in/";
+        protected override string SubFolderDataOut => "out/";
+        public override bool IsStreaming => true;
+    }
+    
+    public partial class IncrementalCentroidDecompositionSSViAlgorithm
+    {
+        public override string AlgCode => "ssvi";
+        protected override string _EnvPath => $"{AlgoPack.GlobalAlgorithmsLocation}AlgoCollection/_data/";
+        protected override string SubFolderDataIn => "in/";
+        protected override string SubFolderDataOut => "out/";
+        public override bool IsStreaming => true;
+    }
+    
+    public partial class IncrementalCentroidDecompositionASVAlgorithm
+    {
+        public override string AlgCode => "asv";
+        protected override string _EnvPath => $"{AlgoPack.GlobalAlgorithmsLocation}AlgoCollection/_data/";
+        protected override string SubFolderDataIn => "in/";
+        protected override string SubFolderDataOut => "out/";
+        public override bool IsStreaming => true;
+    }
+    
+    public partial class LongCentroidDecompositionAlgorithm
+    {
+        public override string AlgCode => "orbits-long";
         protected override string _EnvPath => $"{AlgoPack.GlobalAlgorithmsLocation}AlgoCollection/_data/";
         protected override string SubFolderDataIn => "in/";
         protected override string SubFolderDataOut => "out/";

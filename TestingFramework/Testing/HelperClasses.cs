@@ -86,7 +86,7 @@ namespace TestingFramework.Testing
                 case ExperimentScenario.Columns: return "col";
                 case ExperimentScenario.BlockSlide: return "bslide";
                 case ExperimentScenario.Blackout: return "frow";
-                case ExperimentScenario.IncreasingBlockCount: return "mc-incr";
+                case ExperimentScenario.IncreasingBlockCount: return "ts-bl-fix";
                 
                 case ExperimentScenario.MulticolDisjoint: return "mc-dj";
                 case ExperimentScenario.MulticolOverlap: return "mc-ol";
@@ -113,7 +113,7 @@ namespace TestingFramework.Testing
                 case ExperimentScenario.Columns: return "columns";
                 case ExperimentScenario.BlockSlide: return "blockslide";
                 case ExperimentScenario.Blackout: return "blackout";
-                case ExperimentScenario.IncreasingBlockCount: return "multicol-increasing";
+                case ExperimentScenario.IncreasingBlockCount: return "ts-block-fix";
                 
                 case ExperimentScenario.MulticolDisjoint: return "multicol-disjoint";
                 case ExperimentScenario.MulticolOverlap: return "multicol-overlap";
