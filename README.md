@@ -13,7 +13,7 @@ A detailed description of the recovery scenarios can be found [here](https://git
 The online scenarios are described [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/bin/Debug/results/plotfiles/streaming_end.txt) while the batch scenarios are described [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/bin/Debug/results/plotfiles/batch_mid.txt). 
 -->
 
-[**Prerequisites**](#prerequisites) | [**Build**](#build) | [**Execution**](#execution) | [**Benchmark Customization**](#benchmark-customization) | [**Citation**](#citation)
+[**Prerequisites**](#prerequisites) | [**Build**](#build) | [**Execution**](#execution) | [**Citation**](#citation)
 ___ 
  
 ## Prerequisites
@@ -35,13 +35,43 @@ ___
 
 ```bash
     $ cd TestingFramework/bin/Debug/
-    $ mono TestingFramework.exe 
 ```
 
-- **Results**: All results will be added to `Results` folder. The accuracy results of all algorithms will be sequentially added for each scenario and dataset to: `Results/.../.../.../error/`. The runtime results of all algorithms will be added to: `Results/.../.../.../runtime/`. The plots of the recovered blocks will be added to the folder `Results/.../.../.../plots/`.
+To run the simplified set of tests (M-RNN will be missing completely, SSV/SSVi will be missing for soccer) type:
 
-- **Warning**: The test suite with the default setup will take ~20 hours to finish. 
+```bash
+    $ sh repro_short.sh
+```
 
+To run a full version (might take a week or more) type:
+
+```bash
+    $ sh repro_long.sh
+```
+
+- **Results**: All results will be added to `Results`, `ResultsLONG` and `ResultsORBITS` folders.
+
+  - Figure 5: Results/streaming_end/missingpercentage/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
+
+  - Figure 6: tba
+
+  - Figure 7: Results/streaming_end/ts-block-fix/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
+
+  - Figure 8: Results/streaming_end/mcar-ts-multiblock/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
+
+  - Figure 9: tba
+
+  - Figure 10: Results/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
+
+  - Figure 11: Results/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
+
+  - Figure 12: ResultsLONG/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
+
+  - Figure 13a: ResultsORBITS/f13_len.txt
+
+  - Figure 13b: ResultsORBITS/f13_col.txt
+
+<!--
 ___
 ## Benchmark Customization 
 
@@ -69,7 +99,7 @@ To enable an additional algorithm
 To enable an additional recovery scenario
 - open the file `TestingFramework/config.cfg`
 - add the name of the scenario to the line `Scenarios =`
-
+-->
 
 ___
 ## Citation
