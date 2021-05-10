@@ -29,6 +29,13 @@ ___
 ```bash
     $ sh install_linux.sh
 ```
+
+Some experiments use data sets too large for github. Please download the following archives:
+   - https://drive.switch.ch/index.php/s/MBubEIjA4youheB 
+   - https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
+
+Open `TestingFramework/bin/Debug/data` folder and exctract `bafu_full_normal.txt` into `bafu_full` subfolder and `soccer_full_normal.txt` into `soccer_full` subfolder.
+
 ___
 ## Execution
 
