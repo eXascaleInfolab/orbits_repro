@@ -29,7 +29,7 @@ ___
     $ sh install_linux.sh
 ```
 
-The experiments of Fig 12 use datasets which are too large for github. To obtain these results, please first download the following archives:
+The experiments of Fig 12 use datasets which are too large for github. To obtain those results, please first download the following archives:
    - https://drive.switch.ch/index.php/s/MBubEIjA4youheB 
    - https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
 
