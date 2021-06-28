@@ -2,7 +2,7 @@
 
 <img img align="right" width="50" height="50" src="orbits_logo.png" >
 
-- **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN<sup>*</sup>. To enable/disable any algorithm, please refer to the *Algorithms customization* section below.
+- **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN. 
 - **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu and soccer<sup>*</sup>. 
 - **Scenarios**: The benchmark will execute the full set of 11 recovery scenarios and report the recovery error (RMSE, MSE and MAE) and correlation (Pearson and Spermann). 
 A detailed description of the recovery scenarios can be found [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/README.md).
@@ -38,46 +38,64 @@ Open `TestingFramework/bin/Debug/data` folder and exctract `bafu_full_normal.txt
 ___
 ## Execution
 
+We have two versions of reproducibilty: simplied (fast but lacks some results) and full (slow and complete). 
+- To run the simplified set of tests (takes ~XXX days). The results of M-RNN (all datasets) and SSV/SSVi (Soccer dataset) will be missing:
+
 ```bash
     $ cd TestingFramework/bin/Debug/
-```
-
-We have two versions of reproducibilty: simplied (fast but lacks some results) and full (slow and complete). 
-To run the simplified set of tests (results of M-RNN (all datasets) and SSV/SSVi (Soccer dataset) will be missing:
-
-```bash
     $ sh repro_short.sh
 ```
 
-To run the full version (might take more than a week):
+- To run the full version (takes ~1 week):
 
 ```bash
-    $ sh repro_long.sh
+ $ cd TestingFramework/bin/Debug/
+ $ sh repro_long.sh
 ```
 
 ___
 ## Results
-The results of each experiment will be added to one of these folders: `Results`, `ResultsLONG` and `ResultsORBITS`.
+The results of each experiment will be added to one of these folders: `Results`, `ResultsLONG` or `ResultsORBITS`.
 
-  - Figure 5: Results/streaming_end/missingpercentage/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
+  - Figure 5: 
+     - RMSE: 
+     - Plots: Results/streaming_end/missingpercentage/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
 
-  - Figure 6: tba
+  - Figure 6: 
+     - RMSE :
+     - Plots: 
 
-  - Figure 7: Results/streaming_end/ts-block-fix/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
+  - Figure 7: 
+     - RMSE: 
+     - Plots: Results/streaming_end/ts-block-fix/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
 
-  - Figure 8: Results/streaming_end/mcar-ts-multiblock/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
+  - Figure 8: 
+     - RMSE: 
+     - Plots: Results/streaming_end/mcar-ts-multiblock/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
 
   - Figure 9: tba
+     - RMSE:
+     - Plots:  
 
-  - Figure 10: Results/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
+  - Figure 10: 
+     - RMSE: 
+     - Plots: Results/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
 
-  - Figure 11: Results/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
+  - Figure 11: 
+     - Runtime:  
+     - Plots: Results/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
 
-  - Figure 12: ResultsLONG/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
+  - Figure 12: 
+     - Runtime:  
+     - Plots: ResultsLONG/streaming_end/mcar-length/\%dataset\%/runtime/plots/\%dataset\%\_rt.eps
 
-  - Figure 13a: ResultsORBITS/f13_len.txt
+  - Figure 13a: 
+     - RMSE: ResultsORBITS/f13_len.txt
+     - Plots:
 
-  - Figure 13b: ResultsORBITS/f13_col.txt
+  - Figure 13b: 
+     - RMSE: ResultsORBITS/f13_col.txt
+     - Plots:
 
 
 ___
