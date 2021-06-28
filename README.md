@@ -55,7 +55,7 @@ We have two versions of reproducibilty: simplied (fast but lacks some results) a
 
 ___
 ## Results
-The results of each experiment will be added to one of these folders: `Results`, `ResultsLONG` or `ResultsORBITS`.
+The results of each experiment will be added to one of these folders: `Results`, `ResultsLONG` or `ResultsORBITS`. For each path,  please replace `%dataset%` by the name of a dataset (drift10, motion, bafu or soccer). 
 
   - Figure 5: 
      - RMSE: 
