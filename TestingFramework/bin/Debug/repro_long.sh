@@ -1,27 +1,31 @@
 #!/bin/sh
 
-# Figure 5
+# Figure 5 a-c
 mono TestingFramework.exe ./scrlong/f5_miss.cfg
+# Figure 5 d
 mono TestingFramework.exe ./scrlong/f5_miss2.cfg
 
 # Figure 6
 
 ### TBA
 
-# Figure 7
+# Figure 7 a-c
 mono TestingFramework.exe ./scrlong/f7_tsblockfix.cfg
+# Figure 7 d
 mono TestingFramework.exe ./scrlong/f7_tsblockfix2.cfg
 
-# Figure 8
+# Figure 8 a-c
 mono TestingFramework.exe ./scrlong/f8_tsmulti.cfg
+# Figure 8 d
 mono TestingFramework.exe ./scrlong/f8_tsmulti2.cfg
 
 # Figure 9
 
 ### TBA
 
-# Figure 10
+# Figure 10 a
 mono TestingFramework.exe ./scrlong/f10_lenrt.cfg
+# Figure 10 b
 mono TestingFramework.exe ./scrlong/f10_lenrt2.cfg
 
 # Figure 11
