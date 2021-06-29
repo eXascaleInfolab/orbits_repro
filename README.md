@@ -61,7 +61,7 @@ The results of each experiment will be added to one of these folders: `Results`,
      - RMSE: 
      - Plots: Results/streaming_end/missingpercentage/\%dataset\%/error/plots/\%dataset\%\_rmse.eps
 
-  - Figure 6: tba
+  - Figure 6: skip
      - RMSE :
      - Plots: 
 
