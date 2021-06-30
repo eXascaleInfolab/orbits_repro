@@ -29,11 +29,12 @@ ___
     $ sh install_linux.sh
 ```
 
-The experiments of Fig 12 use datasets which are too large for github. To obtain those results, please first download the following archives:
+The experiments of Fig 12 use datasets which are too large for github. To obtain those results:
+1. Download the following zip files:
    - https://drive.switch.ch/index.php/s/MBubEIjA4youheB 
    - https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
 
-Then, extract `bafu_full_normal.txt` into `TestingFramework/bin/Debug/data/bafu_full` subfolder and `soccer_full_normal.txt` into `TestingFramework/bin/Debug/data/soccer_full` subfolder.
+2. Extract `bafu_full_normal.txt` and `soccer_full_normal.txt` into `TestingFramework/bin/Debug/data/bafu_full/` and `TestingFramework/bin/Debug/data/soccer_full/`, respectively.
 
 ___
 ## Execution
