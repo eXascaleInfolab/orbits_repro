@@ -33,7 +33,7 @@ The experiments of Fig 12 use datasets which are too large for github. To obtain
    - https://drive.switch.ch/index.php/s/MBubEIjA4youheB 
    - https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
 
-Then, open `TestingFramework/bin/Debug/data` folder and extract `bafu_full_normal.txt` into `bafu_full` subfolder and `soccer_full_normal.txt` into `soccer_full` subfolder.
+Then, extract `bafu_full_normal.txt` into `TestingFramework/bin/Debug/data/bafu_full` subfolder and `soccer_full_normal.txt` into `TestingFramework/bin/Debug/data/soccer_full` subfolder.
 
 ___
 ## Execution
