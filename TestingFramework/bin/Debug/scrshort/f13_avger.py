@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # baseline - unchanged
-resfolder = "ResultsORBITS/";
+resfolder = "ResultsSVector/";
 extype = "streaming_end";
 algos = ["asv", "orbits"];
 
