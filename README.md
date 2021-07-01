@@ -76,59 +76,59 @@ Manual aggregation over mutiple results. The reproducibility of this figure is h
   
 ### Figure 7
   - Fig 7a:
-     - RMSE: Results/streaming_end/ts-block-fix/drift10/error/rmse
      - Plot: Results/streaming_end/ts-block-fix/drift10/error/plots/drift10\_rmse.eps
+     - RMSE: Results/streaming_end/ts-block-fix/drift10/error/rmse
   - Fig 7b:
-     - RMSE: Results/streaming_end/ts-block-fix/motion/error/rmse
      - Plot: Results/streaming_end/ts-block-fix/motion/error/plots/motion\_rmse.eps
+     - RMSE: Results/streaming_end/ts-block-fix/motion/error/rmse
   - Fig 7c:
-     - RMSE: Results/streaming_end/ts-block-fix/bafu/error/rmse
      - Plot: Results/streaming_end/ts-block-fix/bafu/error/plots/bafu\_rmse.eps
+     - RMSE: Results/streaming_end/ts-block-fix/bafu/error/rmse
   - Fig 7d:
-     - RMSE: Results/streaming_end/ts-block-fix/soccer/error/rmse
      - Plot: Results/streaming_end/ts-block-fix/soccer/error/plots/soccer\_rmse.eps
+     - RMSE: Results/streaming_end/ts-block-fix/soccer/error/rmse
 
 
 ### Figure 8
   - Fig 8a:
-     - RMSE: Results/streaming_end/mcar-ts-multiblock/drift10/error/rmse
      - Plot: Results/streaming_end/mcar-ts-multiblock/drift10/error/plots/drift10\_rmse.eps
+     - RMSE: Results/streaming_end/mcar-ts-multiblock/drift10/error/rmse
   - Fig 8b:
-     - RMSE: Results/streaming_end/mcar-ts-multiblock/motion/error/rmse
-     - Plot: Results/streaming_end/mcar-ts-multiblock/motion/error/plots/motion\_rmse.eps
+    - Plot: Results/streaming_end/mcar-ts-multiblock/motion/error/plots/motion\_rmse.eps
+    - RMSE: Results/streaming_end/mcar-ts-multiblock/motion/error/rmse
   - Fig 8c:
-     - RMSE: Results/streaming_end/mcar-ts-multiblock/bafu/error/rmse
-     - Plot: Results/streaming_end/mcar-ts-multiblock/bafu/error/plots/bafu\_rmse.eps
+    - Plot: Results/streaming_end/mcar-ts-multiblock/bafu/error/plots/bafu\_rmse.eps
+    - RMSE: Results/streaming_end/mcar-ts-multiblock/bafu/error/rmse
   - Fig 8d:
-     - RMSE: Results/streaming_end/mcar-ts-multiblock/soccer/error/rmse
-     - Plot: Results/streaming_end/mcar-ts-multiblock/soccer/error/plots/soccer\_rmse.eps
+   - Plot: Results/streaming_end/mcar-ts-multiblock/soccer/error/plots/soccer\_rmse.eps
+   - RMSE: Results/streaming_end/mcar-ts-multiblock/soccer/error/rmse
 ### Fig 9
 tbd
 
 
 ### Figure 10
   - Fig 10a:
-     -  Runtime: Results/streaming_end/mcar-length/bafu/runtime/values
      -  Plot: Results/streaming_end/mcar-length/bafu/runtime/plots/bafu\_rt\_log.eps
+     -  Runtime: Results/streaming_end/mcar-length/bafu/runtime/values
   - Plot 10b: 
-     -  Runtime:Results/streaming_end/mcar-length/socccer/runtime/values
      -  Plot: Results/streaming_end/mcar-length/socccer/runtime/plots/socccer\_rt\_log.eps
+     -  Runtime:Results/streaming_end/mcar-length/socccer/runtime/values
 
 ### Figure 11: 
   - Fig 11a:
-     -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
      -  Plot: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt\_log.eps
+     -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
   - Fig 11b:
-     -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
      -  Plot: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt\_log.eps
+     -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
 
 ### Figure 12
   - Fig 12a:
-     -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
-     -  Plot: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/plots/bafu_full\_rt\_log.eps
+    -  Plot: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/plots/bafu_full\_rt\_log.eps
+    -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
   - Fig 12b:
-     -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
-     -  Plot: ResultsLONG/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
+    -  Plot: ResultsLONG/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
+    -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
 
 ### Figure 13
   - Fig 13a: 
