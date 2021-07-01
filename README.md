@@ -40,7 +40,7 @@ ___
 ## Execution
 
 We have two versions of reproducibilty: simplied (fast but lacks some results) and full (slow and complete). 
-- To run the simplified set of tests (takes ~XXX days). The results of M-RNN (all datasets) and SSV/SSVi (Soccer dataset) will be missing:
+- To run the simplified set of tests (takes ~1.5 days). The results of M-RNN (all datasets) and SSV/SSVi (Soccer dataset) will be missing:
 
 ```bash
     $ cd TestingFramework/bin/Debug/
@@ -56,59 +56,86 @@ We have two versions of reproducibilty: simplied (fast but lacks some results) a
 
 ___
 ## Results
-The results of each experiment will be added to one of these folders: `Results`, `ResultsLONG` or `ResultsORBITS`. For each path,  please replace `%dataset%` by the name of each dataset (drift10, motion, bafu or soccer). 
 
-  - Figure 5: 
-     - RMSE: 
-     - Plot 5a: Results/streaming_end/missingpercentage/drift10/error/plots/drift10\_rmse.eps
-     - Plot 5b: Results/streaming_end/missingpercentage/motion/error/plots/motion\_rmse.eps
-     - Plot 5c: Results/streaming_end/missingpercentage/bafu/error/plots/bafu\_rmse.eps
-     - Plot 5d: Results/streaming_end/missingpercentage/soccer/error/plots/soccer\_rmse.eps
+### Figure 5 
+  - Fig. 5a: 
+     -  Plot: Results/streaming_end/missingpercentage/drift10/error/plots/drift10\_rmse.eps
+     -  RMSE: Results/streaming_end/missingpercentage/drift10/error/rmse
+  - Fig. 5b: 
+     - Plot: Results/streaming_end/missingpercentage/motion/error/plots/motion\_rmse.eps
+     - RMSE: Results/streaming_end/missingpercentage/motion/error/rmse
+  - Fig 5c: 
+     - Plot: Results/streaming_end/missingpercentage/bafu/error/plots/bafu\_rmse.eps
+     - RMSE:  Results/streaming_end/missingpercentage/bafu/error/rmse
+  - Fig 5c: 
+     - Plot: Results/streaming_end/missingpercentage/soccer/error/plots/soccer\_rmse.eps
+     - RMSE: Results/streaming_end/missingpercentage/soccer/error/rmse
 
-  - Figure 6: skip
-     - RMSE :
-     - Plots: 
+### Figure 6
+Manual aggregation over mutiple results. The reproducibility of this figure is hard to automate
+  
+### Figure 7
+  - Fig 7a:
+     - RMSE: Results/streaming_end/ts-block-fix/drift10/error/rmse
+     - Plot: Results/streaming_end/ts-block-fix/drift10/error/plots/drift10\_rmse.eps
+  - Fig 7b:
+     - RMSE: Results/streaming_end/ts-block-fix/motion/error/rmse
+     - Plot: Results/streaming_end/ts-block-fix/motion/error/plots/motion\_rmse.eps
+  - Fig 7c:
+     - RMSE: Results/streaming_end/ts-block-fix/bafu/error/rmse
+     - Plot: Results/streaming_end/ts-block-fix/bafu/error/plots/bafu\_rmse.eps
+  - Fig 7d:
+     - RMSE: Results/streaming_end/ts-block-fix/soccer/error/rmse
+     - Plot: Results/streaming_end/ts-block-fix/soccer/error/plots/soccer\_rmse.eps
 
-  - Figure 7: 
-     - RMSE: 
-     - Plot 7a: Results/streaming_end/ts-block-fix/drift10/error/plots/drift10\_rmse.eps
-     - Plot 7b: Results/streaming_end/ts-block-fix/motion/error/plots/motion\_rmse.eps
-     - Plot 7c: Results/streaming_end/ts-block-fix/bafu/error/plots/bafu\_rmse.eps
-     - Plot 7d: Results/streaming_end/ts-block-fix/soccer/error/plots/soccer\_rmse.eps
 
-  - Figure 8: 
-     - RMSE: 
-     - Plot 8a: Results/streaming_end/mcar-ts-multiblock/drift10/error/plots/drift10\_rmse.eps
-     - Plot 8b: Results/streaming_end/mcar-ts-multiblock/motion/error/plots/motion\_rmse.eps
-     - Plot 8c: Results/streaming_end/mcar-ts-multiblock/bafu/error/plots/bafu\_rmse.eps
-     - Plot 8d: Results/streaming_end/mcar-ts-multiblock/soccer/error/plots/soccer\_rmse.eps
+### Figure 8
+  - Fig 8a:
+     - RMSE: Results/streaming_end/mcar-ts-multiblock/drift10/error/rmse
+     - Plot: Results/streaming_end/mcar-ts-multiblock/drift10/error/plots/drift10\_rmse.eps
+  - Fig 8b:
+     - RMSE: Results/streaming_end/mcar-ts-multiblock/motion/error/rmse
+     - Plot: Results/streaming_end/mcar-ts-multiblock/motion/error/plots/motion\_rmse.eps
+  - Fig 8c:
+     - RMSE: Results/streaming_end/mcar-ts-multiblock/bafu/error/rmse
+     - Plot: Results/streaming_end/mcar-ts-multiblock/bafu/error/plots/bafu\_rmse.eps
+  - Fig 8d:
+     - RMSE: Results/streaming_end/mcar-ts-multiblock/soccer/error/rmse
+     - Plot: Results/streaming_end/mcar-ts-multiblock/soccer/error/plots/soccer\_rmse.eps
+### Fig 9
+tbd
 
-  - Figure 9: tba
-     - RMSE:
-     - Plots:  
 
-  - Figure 10: 
-     - Runtime: 
-     - Plot 10a: Results/streaming_end/mcar-length/bafu/runtime/plots/bafu\_rt.eps
-     - Plot 10b: Results/streaming_end/mcar-length/socccer/runtime/plots/socccer\_rt.eps
+### Figure 10
+  - Fig 10a:
+     -  Runtime: Results/streaming_end/mcar-length/bafu/runtime/values
+     -  Plot: Results/streaming_end/mcar-length/bafu/runtime/plots/bafu\_rt\_log.eps
+  - Plot 10b: 
+     -  Runtime:Results/streaming_end/mcar-length/socccer/runtime/values
+     -  Plot: Results/streaming_end/mcar-length/socccer/runtime/plots/socccer\_rt\_log.eps
 
-  - Figure 11: 
-     - Runtime:  
-     - Plot 11a: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt.eps
-     - Plot 11b: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt.eps
+### Figure 11: 
+  - Fig 11a:
+     -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
+     -  Plot: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt\_log.eps
+  - Fig 11b:
+     -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
+     -  Plot: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt\_log.eps
 
-  - Figure 12: 
-     - Runtime:  
-     - Plot 12a: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/plots/bafu_full\_rt.eps
-     - Plot 12b: ResultsLONG/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt.eps
+### Figure 12
+  - Fig 12a:
+     -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
+     -  Plot: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/plots/bafu_full\_rt\_log.eps
+  - Fig 12b:
+     -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
+     -  Plot: ResultsLONG/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
 
-  - Figure 13a: 
-     - RMSE: ResultsORBITS/f13_len.txt
-     - Plots:
+### Figure 13
+  - Fig 13a: 
+     - runtime: ResultsORBITS/f13_len.txt
 
   - Figure 13b: 
-     - RMSE: ResultsORBITS/f13_col.txt
-     - Plots:
+     - rutime: ResultsORBITS/f13_col.txt
 
 
 ___
