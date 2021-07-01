@@ -36,20 +36,20 @@ mono TestingFramework.exe ./scrlong/f12_augrt.cfg
 
 # Figure 13
 mono TestingFramework.exe ./scrlong/f13_metaorbitsrt.cfg
-python -c 'from scrlong.f13_avger import average; average("length", "drift10", 2);' >> ResultsORBITS/f13_len.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_len.txt
-python -c 'from scrlong.f13_avger import average; average("length", "motion", 2);' >> ResultsORBITS/f13_len.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_len.txt
-python -c 'from scrlong.f13_avger import average; average("length", "bafu", 2);' >> ResultsORBITS/f13_len.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_len.txt
-python -c 'from scrlong.f13_avger import average; average("length", "soccer", 2);' >> ResultsORBITS/f13_len.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_len.txt
+python -c 'from scrlong.f13_avger import average; average("length", "drift10", 2);' >> ResultsSVector/f13_len.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_len.txt
+python -c 'from scrlong.f13_avger import average; average("length", "motion", 2);' >> ResultsSVector/f13_len.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_len.txt
+python -c 'from scrlong.f13_avger import average; average("length", "bafu", 2);' >> ResultsSVector/f13_len.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_len.txt
+python -c 'from scrlong.f13_avger import average; average("length", "soccer", 2);' >> ResultsSVector/f13_len.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_len.txt
 
-python -c 'from scrlong.f13_avger import average; average("columns", "drift10", 2);' >> ResultsORBITS/f13_col.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_col.txt
-python -c 'from scrlong.f13_avger import average; average("columns", "motion", 2);' >> ResultsORBITS/f13_col.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_col.txt
-python -c 'from scrlong.f13_avger import average; average("columns", "bafu", 2);' >> ResultsORBITS/f13_col.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_col.txt
-python -c 'from scrlong.f13_avger import average; average("columns", "soccer", 2);' >> ResultsORBITS/f13_col.txt
-/bin/echo -e "\n" >> ResultsORBITS/f13_col.txt
+python -c 'from scrlong.f13_avger import average; average("columns", "drift10", 2);' >> ResultsSVector/f13_col.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_col.txt
+python -c 'from scrlong.f13_avger import average; average("columns", "motion", 2);' >> ResultsSVector/f13_col.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_col.txt
+python -c 'from scrlong.f13_avger import average; average("columns", "bafu", 2);' >> ResultsSVector/f13_col.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_col.txt
+python -c 'from scrlong.f13_avger import average; average("columns", "soccer", 2);' >> ResultsSVector/f13_col.txt
+/bin/echo -e "\n" >> ResultsSVector/f13_col.txt
