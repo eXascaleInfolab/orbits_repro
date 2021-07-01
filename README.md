@@ -132,10 +132,10 @@ tbd
 
 ### Figure 13
   - Fig 13a: 
-     - RMSE: ResultsORBITS/f13_len.txt
+     - Runtime: ResultsORBITS/f13_len.txt
 
   - Figure 13b: 
-     - RMSE: ResultsORBITS/f13_col.txt
+     - Runtime: ResultsORBITS/f13_col.txt
 
 
 ___
