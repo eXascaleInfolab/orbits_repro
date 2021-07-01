@@ -2,11 +2,12 @@
 
 <img img align="right" width="50" height="50" src="orbits_logo.png" >
 
-- **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN. 
+- **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN<sup>*</sup>. 
 - **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu and soccer. 
 - **Scenarios**: The benchmark will execute the full set of 11 recovery scenarios and report the recovery error (RMSE, MSE and MAE) and correlation (Pearson and Spermann). 
 A detailed description of the recovery scenarios can be found [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/README.md).
 
+<sup>*</sup>disabled by default as it takes a couple of days to run.
 <!--
 The online scenarios are described [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/bin/Debug/results/plotfiles/streaming_end.txt) while the batch scenarios are described [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/bin/Debug/results/plotfiles/batch_mid.txt). 
 -->
@@ -131,10 +132,10 @@ tbd
 
 ### Figure 13
   - Fig 13a: 
-     - runtime: ResultsORBITS/f13_len.txt
+     - RMSE: ResultsORBITS/f13_len.txt
 
   - Figure 13b: 
-     - rutime: ResultsORBITS/f13_col.txt
+     - RMSE: ResultsORBITS/f13_col.txt
 
 
 ___
