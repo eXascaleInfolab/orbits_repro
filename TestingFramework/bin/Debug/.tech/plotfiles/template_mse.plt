@@ -11,20 +11,20 @@ set key above width -2 vertical maxrows 3
 set tmargin 4.0
 
 set xlabel "{descr}"
-set ylabel "mean squared error" offset 1.5 
+set ylabel "MSE" offset 1.5 
 
 plot\
 	{mse}
 
 
 set output "error/plots/{code}_rmse.eps"
-set ylabel "root mean squared error" offset 1.5 
+set ylabel "RMSE" offset 1.5 
 
 plot\
 	{rmse}
 
 set output "error/plots/{code}_mae.eps"
-set ylabel "mean absolute error" offset 1.5 
+set ylabel "MAE" offset 1.5 
 
 plot\
 	{mae}
