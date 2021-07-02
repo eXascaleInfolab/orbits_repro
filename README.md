@@ -143,7 +143,6 @@ slightly different as, in each run, we randomly pick the incomplete time series.
      -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
 
 ### Figure 12
-Please make sure that the large datasets are already downlowded (see [**Build**](#build) section)
   - Fig 12a:
     -  Plot: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/plots/bafu_full\_rt\_log.eps
     -  Runtime: ResultsLONG/streaming_end/mcar-length/bafu_full/runtime/values
