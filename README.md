@@ -2,13 +2,13 @@
 
 <img img align="right" width="50" height="50" src="orbits_logo.png" >
 
-- **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN<sup>*</sup>. 
+- **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN. 
 - **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu and soccer. 
 - **Scenarios**: The benchmark will execute the full set of 11 recovery scenarios and report the recovery error (RMSE, MSE and MAE) and correlation (Pearson and Spermann). 
 A detailed description of the recovery scenarios can be found [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/README.md).
 
-<sup>*</sup>disabled by default as it takes a couple of days to run.
 <!--
+<sup>*</sup>disabled by default as it takes a couple of days to run.
 The online scenarios are described [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/bin/Debug/results/plotfiles/streaming_end.txt) while the batch scenarios are described [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/bin/Debug/results/plotfiles/batch_mid.txt). 
 -->
 
@@ -29,7 +29,7 @@ ___
     $ sh install_linux.sh
 ```
 
-The experiments of Fig 12 use datasets which are too large for github. To obtain those results:
+- The experiments of Fig 12 use datasets which are too large for github. To obtain those results:
 1. Download the following zip files:
    - https://drive.switch.ch/index.php/s/MBubEIjA4youheB 
    - https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
@@ -39,19 +39,25 @@ The experiments of Fig 12 use datasets which are too large for github. To obtain
 ___
 ## Execution
 
-We have two versions of reproducibilty: simplied (fast but lacks some results) and full (slow and complete). 
-- To run the simplified set of tests (takes ~1.5 days). The results of M-RNN (all datasets) and SSV/SSVi (Soccer dataset) will be missing:
+We have three different reproducibilty scripts:
 
+- Fast: reproduce the results of all figures except *MRNN* technique and *Figure 13 in the Soccer dataset* (takes ~1.5 days) 
 ```bash
     $ cd TestingFramework/bin/Debug/
     $ sh repro_short.sh
 ```
 
-- To run the full version (takes ~1 week):
+- M-RNN results in all figures (takes in ~ XXX days) 
+
+```bash
+    $ cd TestingFramework/bin/Debug/
+    $ sh repro_extra_mrnn.sh
+```
+- Figure 13 in Soccer dataset (takes ~XXX days):
 
 ```bash
  $ cd TestingFramework/bin/Debug/
- $ sh repro_long.sh
+ $ sh repro_extra_ssv.sh
 ```
 
 ___
