@@ -125,7 +125,7 @@ corr <- function() {
 		cat(i, file=output_cor, append=TRUE);
 		cat(" \t|| \t", file=output_cor, append=TRUE);
 		mat <- cor(df, method="spearman");
-		mat = round(mat * 100);
+		mat = round(mat * 10000) / 100.0;
 		cat(mat[,1], file=output_cor, sep="\t\t", append=TRUE);
 		cat("\n", file=output_cor, append=TRUE);
 	}

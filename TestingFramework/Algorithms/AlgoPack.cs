@@ -143,7 +143,7 @@ namespace TestingFramework.Algorithms
     
     public partial class GrouseAlgorithm
     {
-        public override string AlgCode => "grouse";
+        public override string AlgCode => "sage";
         protected override string _EnvPath => $"{AlgoPack.GlobalAlgorithmsLocation}AlgoCollection/_data/";
         protected override string SubFolderDataIn => "in/";
         protected override string SubFolderDataOut => "out/";
