@@ -5,10 +5,6 @@ mono TestingFramework.exe ./scrshort/f5_miss.cfg
 # Figure 5 d
 mono TestingFramework.exe ./scrshort/f5_miss2.cfg
 
-# Figure 6
-
-### ---
-
 # Figure 7 a-c
 mono TestingFramework.exe ./scrshort/f7_tsblockfix.cfg
 # Figure 7 d
