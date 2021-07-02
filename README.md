@@ -41,19 +41,19 @@ ___
 
 We have three different reproducibilty scripts:
 
-- Fast: reproduce the results of all figures except *MRNN* technique and *Figure 13 in the Soccer dataset* (takes ~1.5 days) 
+- Fast (takes ~1.5 days) : reproduce the results of all figures except the ones of **MRNN** (all figures) and **SSV/iSSV** (Figure 13 in the Soccer dataset) 
 ```bash
     $ cd TestingFramework/bin/Debug/
     $ sh repro_short.sh
 ```
 
-- M-RNN results in all figures (takes in ~ XXX days) 
+- M-RNN results (takes ~ XXX days) 
 
 ```bash
     $ cd TestingFramework/bin/Debug/
     $ sh repro_extra_mrnn.sh
 ```
-- Figure 13 in Soccer dataset (takes ~XXX days):
+- SSV/iSSV results (takes ~XXX days)
 
 ```bash
  $ cd TestingFramework/bin/Debug/
