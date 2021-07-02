@@ -29,13 +29,14 @@ ___
     $ sh install_linux.sh
 ```
 
+<!--
 - Download the full Soccer data for Fig 12  
 
 ```bash
    wget --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1MlX_3OF3zKLKocFKVWYK5yBOfXHTaDBW' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1MlX_3OF3zKLKocFKVWYK5yBOfXHTaDBW" -O soccer_full_normal.txt && rm -rf /tmp/cookies.txt
 ```
 
-<!--
+
 1. Download the following zip file from  https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
 2. Extract `soccer_full_normal.txt` into `TestingFramework/bin/Debug/data/soccer_full/`.
 -->
