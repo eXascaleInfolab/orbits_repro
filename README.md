@@ -103,7 +103,14 @@ Manual aggregation over mutiple results. The reproducibility of this figure is h
    - Plot: Results/streaming_end/mcar-ts-multiblock/soccer/error/plots/soccer\_rmse.eps
    - RMSE: Results/streaming_end/mcar-ts-multiblock/soccer/error/rmse
 ### Fig 9
-tbd
+ - Fig 9a:
+    - Correlation: Results/streaming_end/mcar-ts-multiblock/drift10/error/correlation.dat
+ - Fig 9b:
+    - Correlation: Results/streaming_end/mcar-ts-multiblock/motion/error/correlation.dat
+ - Fig 9c:
+    - Correlation: Results/streaming_end/mcar-ts-multiblock/bafu/error/correlation.dat
+ - Fig 9d:
+    - Correlation: Results/streaming_end/mcar-ts-multiblock/soccer/error/correlation.dat
 
 
 ### Figure 10
