@@ -154,10 +154,10 @@ slightly different as, in each run, we randomly pick a different time series to 
 
 ### Figure 13
   - Fig 13a: 
-     - Runtime: ResultsORBITS/f13_len.txt
+     - Runtime: ResultsSVector/f13_len.txt
 
   - Figure 13b: 
-     - Runtime: ResultsORBITS/f13_col.txt
+     - Runtime: ResultsSVector/f13_col.txt
 
 
 ___
