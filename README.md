@@ -132,7 +132,7 @@ slightly different as, in each run, we randomly pick a different time series to 
   - Fig 10a:
      -  Plot: Results/streaming_end/mcar-length/bafu/runtime/plots/bafu\_rt\_log.eps
      -  Runtime: Results/streaming_end/mcar-length/bafu/runtime/values
-  - Plot 10b: 
+  - Fig 10b: 
      -  Plot: Results/streaming_end/mcar-length/socccer/runtime/plots/socccer\_rt\_log.eps
      -  Runtime:Results/streaming_end/mcar-length/socccer/runtime/values
 
