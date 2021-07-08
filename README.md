@@ -44,15 +44,14 @@ ___
 ___
 ## Execution
 
-We provide a script to quickly reproduce all the results except **Figure 13** in the Soccer dataset and **MRNN** in all figures (takes ~2 days): 
+We provide a single script to reproduce all the results except **Figure 13** in the Soccer dataset and **MRNN** in all figures (takes ~2 days): 
 ```bash
     $ cd TestingFramework/bin/Debug/
     $ sh repro_short.sh
 ```
+We provide two additional scripts to reproduce the remaining results: 
 
-To reproduce the remaining results: 
-
-- Resutls of Figure 13 in Soccer dataset (takes ~XXX days)
+- Results of Figure 13 in the Soccer dataset (takes ~XXX days)
 
 ```bash
     $ cd TestingFramework/bin/Debug/
