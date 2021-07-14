@@ -39,17 +39,6 @@ ___
 
 1. Download the following zip file from  https://drive.switch.ch/index.php/s/sJ7d5uunzIq3fKY
 2. Extract `soccer_full_normal.txt` into `TestingFramework/bin/Debug/data/soccer_full/`.
--->
-
-___
-## Execution
-
-We provide a single script to reproduce all the results except **Figure 13** in the Soccer dataset and **MRNN** in all figures (takes ~2 days): 
-```bash
-    $ cd TestingFramework/bin/Debug/
-    $ sh repro_short.sh
-```
-We provide two additional scripts to reproduce the remaining results: 
 
 - Results of Figure 13 in the Soccer dataset (takes ~XXX days)
 
@@ -57,13 +46,27 @@ We provide two additional scripts to reproduce the remaining results:
     $ cd TestingFramework/bin/Debug/
     $ sh repro_extra_ssv.sh
 ```
+-->
 
-- Results of M-RNN in all figures (takes ~ XXX days) 
+___
+## Execution
+
+- The results of all figues, except **MRNN** (which takes too long), can be obtained by running the following script (takes ~2 days): 
+
+```bash
+    $ cd TestingFramework/bin/Debug/
+    $ sh repro_short.sh
+```
+
+- The results of M-RNN can obtained by running the following script (takes ~ 7 days) 
  
 ```bash
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
+
+
+
 
 
 ___
