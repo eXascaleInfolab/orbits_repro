@@ -10,7 +10,7 @@ namespace TestingFramework.Algorithms
 {
     public partial class IncrementalCentroidDecompositionASVAlgorithm : Algorithm
     {
-        public List<int> KList = new List<int>(new[] { 3, 2 });
+        public List<int> KList = new List<int>(new[] { 2 });
 
         private static bool _init = false;
         public IncrementalCentroidDecompositionASVAlgorithm() : base(ref _init)

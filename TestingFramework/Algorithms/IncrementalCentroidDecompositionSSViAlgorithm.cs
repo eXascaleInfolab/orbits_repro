@@ -10,7 +10,7 @@ namespace TestingFramework.Algorithms
 {
     public partial class IncrementalCentroidDecompositionSSViAlgorithm : Algorithm
     {
-        public List<int> KList = new List<int>(new[] { 3, 2 });
+        public List<int> KList = new List<int>(new[] { 2 });
 
         private static bool _init = false;
         public IncrementalCentroidDecompositionSSViAlgorithm() : base(ref _init)
