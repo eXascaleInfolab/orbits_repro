@@ -134,7 +134,7 @@ slightly different as, in each run, we randomly pick a different time series to 
      -  Plot: Results/streaming_end/mcar-length/socccer/runtime/plots/socccer\_rt\_log.eps
      -  Runtime:Results/streaming_end/mcar-length/socccer/runtime/values
 
-### Figure 11: 
+### Figure 11
   - Fig 11a:
      -  Plot: Results/streaming_end/mcar-columns/motion/runtime/plots/drift10\_rt\_log.eps
      -  Runtime: Results/streaming_end/mcar-columns/motion/runtime/values
