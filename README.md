@@ -55,7 +55,7 @@ ___
 
 ```bash
     $ cd TestingFramework/bin/Debug/
-    $ sh repro_short.sh
+    $ sh repro.sh
 ```
 
 - The results of M-RNN can be obtained by running the following script (takes ~ 7 days): 
