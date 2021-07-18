@@ -149,7 +149,6 @@ slightly different as, in each run, we randomly pick a different time series to 
   - Fig 12b:
     -  Plot: ResultsSynth/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
     -  Runtime: ResultsSynth/streaming_end/mcar-length/bafu_full/runtime/values
- - The runtime results of ssv on the Soccer dataset take a considerable amount of time and thus are not reported. These results can be obtained by running the `repro_extra_ssv.sh` script.
 
 ### Figure 13
   - Fig 13a: 
@@ -158,6 +157,7 @@ slightly different as, in each run, we randomly pick a different time series to 
   - Figure 13b: 
      - Runtime: ResultsSVector/f13_col.txt
 
+ - The runtime results of ssv on the Soccer dataset take a considerable amount of time and are, thus, not reported. These results can be obtained by running the `repro_extra_ssv.sh` script.
 
 ___
 ## Citation
