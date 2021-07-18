@@ -51,7 +51,7 @@ ___
 ___
 ## Execution
 
-- The results of all figues, except **MRNN** (which takes too long), can be obtained by running the following script (takes ~2 days): 
+- The results of all figues, except **MRNN** (which takes too long), can be obtained by running the following script (takes ~3 days): 
 
 ```bash
     $ cd TestingFramework/bin/Debug/
@@ -149,6 +149,7 @@ slightly different as, in each run, we randomly pick a different time series to 
   - Fig 12b:
     -  Plot: ResultsSynth/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
     -  Runtime: ResultsSynth/streaming_end/mcar-length/bafu_full/runtime/values
+ - The runtime results of ssv on the Soccer dataset take a considerable amount of time and thus are not reported. These results can be obtained by running the `repro_extra_ssv.sh` script.
 
 ### Figure 13
   - Fig 13a: 
