@@ -43,5 +43,4 @@ target_link_libraries(
         incCD
         ${LAPACK_LIBRARIES}
         ${Armadillo_LIBRARIES}
-        -lmlpack
 )
