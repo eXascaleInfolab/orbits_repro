@@ -64,6 +64,7 @@ ___
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
+**Note**: The results of MRNN will be added to the folder `ResultsMRNN/`
 
 ___
 ## Results
