@@ -34,20 +34,20 @@ mono TestingFramework.exe ./scrshort/f12_augrt.cfg
 mono TestingFramework.exe ./scrshort/f13_metaorbitsrt.cfg
 mono TestingFramework.exe ./scrshort/f13_metaorbitsrt2.cfg
 
-python -c 'from scrlong.f13_avger import average; average("length", "drift10", 2);' >> ResultsSVector/f13_len.txt
+python -c 'from scrshort.f13_avger2 import average; average("length", "drift10", 2);' >> ResultsSVector/f13_len.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_len.txt
-python -c 'from scrlong.f13_avger import average; average("length", "motion", 2);' >> ResultsSVector/f13_len.txt
+python -c 'from scrshort.f13_avger2 import average; average("length", "motion", 2);' >> ResultsSVector/f13_len.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_len.txt
-python -c 'from scrlong.f13_avger import average; average("length", "bafu", 2);' >> ResultsSVector/f13_len.txt
+python -c 'from scrshort.f13_avger2 import average; average("length", "bafu", 2);' >> ResultsSVector/f13_len.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_len.txt
 python -c 'from scrshort.f13_avger import average; average("length", "soccer", 2);' >> ResultsSVector/f13_len.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_len.txt
 
-python -c 'from scrlong.f13_avger import average; average("columns", "drift10", 2);' >> ResultsSVector/f13_col.txt
+python -c 'from scrshort.f13_avger2 import average; average("columns", "drift10", 2);' >> ResultsSVector/f13_col.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt
-python -c 'from scrlong.f13_avger import average; average("columns", "motion", 2);' >> ResultsSVector/f13_col.txt
+python -c 'from scrshort.f13_avger2 import average; average("columns", "motion", 2);' >> ResultsSVector/f13_col.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt
-python -c 'from scrlong.f13_avger import average; average("columns", "bafu", 2);' >> ResultsSVector/f13_col.txt
+python -c 'from scrshort.f13_avger2 import average; average("columns", "bafu", 2);' >> ResultsSVector/f13_col.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt
 python -c 'from scrshort.f13_avger import average; average("columns", "soccer", 2);' >> ResultsSVector/f13_col.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt

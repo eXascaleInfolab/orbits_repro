@@ -2,7 +2,7 @@
 # baseline - unchanged
 resfolder = "ResultsSVector/";
 extype = "streaming_end";
-algos = ["asv", "orbits"];
+algos = ["orbits", "asv", "ssvi"];
 
 # calling
 
