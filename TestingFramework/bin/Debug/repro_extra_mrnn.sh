@@ -18,6 +18,3 @@ mono TestingFramework.exe ./scrextra/f10_lenrt.cfg
 
 # Figure 11
 mono TestingFramework.exe ./scrextra/f11_colrt.cfg
-
-# Figure 12
-mono TestingFramework.exe ./scrextra/f12_augrt.cfg
