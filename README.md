@@ -58,13 +58,13 @@ ___
     $ sh repro.sh
 ```
 
-- The results of MRNN can be obtained by running the following script (takes between 2 and 7 days depending on the machine): 
+- The results of MRNN can be obtained by running the following script (takes 2-7 days depending on the machine): 
  
 ```bash
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
-**Note**: The results of MRNN will be added to the folder `ResultsMRNN/`
+**Note**: The results of MRNN will be added to the folder `ResultsMRNN/`.
 
 ___
 ## Results
@@ -84,7 +84,7 @@ ___
      - RMSE: Results/streaming_end/missingpercentage/soccer/error/rmse
 
 ### Figure 6
-Manual aggregation over mutiple results. The reproducibility of this figure is hard to automate
+Manual aggregation over mutiple results. The reproducibility of this figure is very hard to automate.
   
 ### Figure 7
   - Fig 7a:
