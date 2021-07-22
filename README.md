@@ -51,7 +51,7 @@ ___
 ___
 ## Execution
 
-- The results of all techniques, except **MRNN** (which takes too long), can be obtained by running one single script (takes ~3 days): 
+- The results of all techniques, except MRNN (which takes too long), can be obtained by running one single script (takes ~3 days): 
 
 ```bash
     $ cd TestingFramework/bin/Debug/
