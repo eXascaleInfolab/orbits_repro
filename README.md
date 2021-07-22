@@ -156,7 +156,7 @@ slightly different as, in each run, we randomly pick a different time series to 
 
  - The runtime results of ssv on the Soccer dataset take a considerable amount of time and are, thus, not reported. These results can be obtained by running the `repro_extra_ssv.sh` script.
 
-**Note**: In case you run the MRNN script, the results will be added to the folder `ResultsMRNN/` under the same paths decribed above.
+**Note**: In case you run the MRNN script, the results will be added to the folder `ResultsMRNN/` under the same subfolders as decribed above.
 
 
 ___
