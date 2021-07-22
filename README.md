@@ -58,7 +58,7 @@ ___
     $ sh repro.sh
 ```
 
-- The results of MRNN can be obtained by running the following script (takes ~ 2 days): 
+- The results of MRNN can be obtained by running the following script (takes between 2 and 7 days depending on the machine): 
  
 ```bash
      $ cd TestingFramework/bin/Debug/
