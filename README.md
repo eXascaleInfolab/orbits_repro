@@ -58,7 +58,7 @@ ___
     $ sh repro.sh
 ```
 
-- The results and plots of MRNN can be obtained by running the following script (takes 2-7 days depending on the machine): 
+- In case you want to reproduce the results of MRNN, you need to run the following script (takes 2-7 days depending on the machine): 
  
 ```bash
      $ cd TestingFramework/bin/Debug/
