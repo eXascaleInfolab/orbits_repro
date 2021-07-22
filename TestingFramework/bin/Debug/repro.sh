@@ -51,3 +51,5 @@ python -c 'from scrshort.f13_avger2 import average; average("columns", "bafu", 2
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt
 python -c 'from scrshort.f13_avger import average; average("columns", "soccer", 2);' >> ResultsSVector/f13_col.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt
+
+rm -rf ResultsSVector/streaming_end/
