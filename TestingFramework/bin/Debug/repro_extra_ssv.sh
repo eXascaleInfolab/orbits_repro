@@ -8,3 +8,5 @@ python -c 'from scrextra.f13_avger import average; average("length", "soccer", 2
 mono TestingFramework.exe ./scrextra/f13_metaorbitsrt_ssv_col.cfg
 python -c 'from scrextra.f13_avger import average; average("columns", "soccer", 2);' >> ResultsSVector/f13_col.txt
 /bin/echo -e "\n" >> ResultsSVector/f13_col.txt
+
+rm -rf ResultsSVector/streaming_end/
