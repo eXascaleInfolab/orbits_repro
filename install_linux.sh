@@ -1,5 +1,5 @@
-sudo apt-get update
-suod apt-get upgrade
+sudo apt-get -y update
+suod apt-get -y upgrade
 sudo apt-get -y install build-essential cmake libopenmpi-dev libopenblas-dev liblapack-dev libarmadillo-dev
 sudo apt-get -y install r-base gnuplot
 sudo apt-get -y install python-dev
