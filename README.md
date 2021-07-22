@@ -1,6 +1,4 @@
-# Reproducibility Repository for ORBITS
-
-<img img align="right" width="50" height="50" src="orbits_logo.png" >
+# Reproducibility Repository for ORBITS <img img align="center" width="50" height="50" src="orbits_logo.png" >
 
 - **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, GROUSE, OGDImpute, pcaMME, TKCM and M-RNN. 
 - **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu and soccer. 
