@@ -51,7 +51,7 @@ ___
 ___
 ## Execution
 
-- The results of all figues, except **MRNN** (which takes too long), can be obtained by running the following script (takes ~3 days): 
+- The results of all techniques, except **MRNN** (which takes too long), can be obtained by running one single script (takes ~3 days): 
 
 ```bash
     $ cd TestingFramework/bin/Debug/
@@ -64,8 +64,6 @@ ___
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
-**Note**: The results of MRNN will be added to the folder `ResultsMRNN/`.
-
 ___
 ## Results
 
@@ -159,6 +157,9 @@ slightly different as, in each run, we randomly pick a different time series to 
      - Runtime: ResultsSVector/f13_col.txt
 
  - The runtime results of ssv on the Soccer dataset take a considerable amount of time and are, thus, not reported. These results can be obtained by running the `repro_extra_ssv.sh` script.
+
+**Note**: In case you run the MRNN script, the results will be added to the folder `ResultsMRNN/` under the same paths decribed above.
+
 
 ___
 ## Citation
