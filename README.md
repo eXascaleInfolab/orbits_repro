@@ -16,8 +16,8 @@ ___
 ## Prerequisites
 
 - Ubuntu 16, 18 or 20 (including Ubuntu derivatives, e.g., Xubuntu).
-- Clone this repository.
-- Mono: Install mono from https://www.mono-project.com/download/stable/ (takes few minutes)
+- Clone this repository: https://github.com/eXascaleInfolab/orbits_repro .
+- Mono: Install mono from https://www.mono-project.com/download/stable/ (takes few minutes).
 
 ___
 ## Build
