@@ -96,7 +96,6 @@ Manual aggregation over mutiple results. The reproducibility of this figure is v
      - Plot: Results/streaming_end/ts-block-fix/soccer/error/plots/soccer\_rmse.eps
      - RMSE: Results/streaming_end/ts-block-fix/soccer/error/rmse
 
-
 ### Figure 8
   - Fig 8a:
      - Plot: Results/streaming_end/mcar-ts-multiblock/drift10/error/plots/drift10\_rmse.eps
@@ -110,6 +109,7 @@ Manual aggregation over mutiple results. The reproducibility of this figure is v
   - Fig 8d:
     - Plot: Results/streaming_end/mcar-ts-multiblock/soccer/error/plots/soccer\_rmse.eps
     - RMSE: Results/streaming_end/mcar-ts-multiblock/soccer/error/rmse
+
 ### Figure 9
 We compute the AVG for each technique over three runs. The absolute correlation values might be
 slightly different as, in each run, we randomly pick a different time series to recover. 
@@ -121,7 +121,6 @@ slightly different as, in each run, we randomly pick a different time series to 
     - Correlation: Results/streaming_end/mcar-ts-multiblock/bafu/error/correlation.dat
  - Fig 9d:
     - Correlation: Results/streaming_end/mcar-ts-multiblock/soccer/error/correlation.dat
-
 
 ### Figure 10
   - Fig 10a:
