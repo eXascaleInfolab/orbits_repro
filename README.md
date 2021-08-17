@@ -11,8 +11,8 @@ The online scenarios are described [here](https://github.com/eXascaleInfolab/orb
 -->
 
 [**Prerequisites**](#prerequisites) | [**Build**](#build) | [**Execution**](#execution) | [**Citation**](#citation)
-___ 
- 
+
+___  
 ## Prerequisites
 
 - Ubuntu 16, 18 or 20 (including Ubuntu derivatives, e.g., Xubuntu).
