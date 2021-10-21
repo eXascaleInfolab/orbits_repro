@@ -140,11 +140,11 @@ We compute the AVG for each technique over three runs. The absolute correlation 
 
 ### Figure 12
   - Fig 12a:
-    -  Plot: ResultsSynth/streaming_end/mcar-length/bafu_full/runtime/plots/bafu_full\_rt\_log.eps
-    -  Runtime: ResultsSynth/streaming_end/mcar-length/bafu_full/runtime/values
+    -  Plot: ResultsSynth/streaming_end/mcar-columns/bafu_full/runtime/plots/bafu_full\_rt\_log.eps
+    -  Runtime: ResultsSynth/streaming_end/mcar-columns/bafu_full/runtime/values
   - Fig 12b:
-    -  Plot: ResultsSynth/streaming_end/mcar-length/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
-    -  Runtime: ResultsSynth/streaming_end/mcar-length/bafu_full/runtime/values
+    -  Plot: ResultsSynth/streaming_end/mcar-columns/soccer_full/runtime/plots/soccer_full\_rt\_log.eps
+    -  Runtime: ResultsSynth/streaming_end/mcar-columns/bafu_full/runtime/values
 
 ### Figure 13
   - Fig 13a: 
