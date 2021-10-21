@@ -15,7 +15,7 @@ The online scenarios are described [here](https://github.com/eXascaleInfolab/orb
 ___  
 ## Prerequisites
 
-- Ubuntu 16, 18 or 20 (including Ubuntu derivatives, e.g., Xubuntu).
+- Ubuntu 18 or 20 (including Ubuntu derivatives, e.g., Xubuntu).
 - Clone this repository: https://github.com/eXascaleInfolab/orbits_repro .
 - Mono: Install mono from https://www.mono-project.com/download/stable/ (takes few minutes).
 
