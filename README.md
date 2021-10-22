@@ -56,14 +56,15 @@ ___
     $ sh repro.sh
 ```
 
-- In case you want to reproduce the results of MRNN, you need to run the following script (takes 2-7 days depending on the machine): 
+- In case you want to reproduce the results of MRNN, you need to:
+    - Clone the repo into another folder
+    - Run the following script (takes 2-7 days depending on the machine): 
  
 ```bash
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
 
-- **Remark** `repro.sh` and `repro_extra_mrnn.sh` must not be executed at the same time while being in the same repository copy.
 ___
 ## Results 
 
