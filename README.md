@@ -49,22 +49,30 @@ ___
 ___
 ## Execution
 
-- The results and plots of all techniques, except MRNN (which takes too long), can be obtained by running one single script (takes ~3 days): 
+- We provide three different scripts to reproduce the experiments. In case you are using the same machine to reproduce the results, the scripts should be executed sequentially. 
+
+1. The results and plots of all techniques, except MRNN (which takes too long), can be obtained by running the following script (takes ~3 days): 
 
 ```bash
     $ cd TestingFramework/bin/Debug/
     $ sh repro.sh
 ```
 
-- In case you want to reproduce the results of MRNN, you need to:
+2. The results of MRNN can be obtained by running the following script (takes 2-7 days depending on the machine): 
 
-    - Clone the repo into another folder (**MRNN should be executed on a separate folder**)
-    - Run the following script (takes 2-7 days depending on the machine): 
  
 ```bash
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
+
+3.  The runtime results of ssv (Fig 13a and 13b: Soccer dataset) take a considerable amount of time and are, thus, not reported. These results can be obtained by running the following script (takes ~3 days):  
+
+```bash
+     $ cd TestingFramework/bin/Debug/
+     $ sh repro_extra_ssv.sh
+```
+
 
 ___
 ## Results 
@@ -157,7 +165,6 @@ We compute the AVG for each technique over three runs. The absolute correlation 
   - Figure 13b: 
      - Runtime: ResultsSVector/f13_col.txt
 
- - The runtime results of ssv on the Soccer dataset take a considerable amount of time and are, thus, not reported. These results can be obtained by running the `repro_extra_ssv.sh` script.
 
 **Note**: In case you run the MRNN script, the results will be added to the folder `ResultsMRNN/` under the same subfolders as decribed above.
 
