@@ -57,7 +57,8 @@ ___
 ```
 
 - In case you want to reproduce the results of MRNN, you need to:
-    - Clone the repo into another folder
+
+    - Clone the repo into another folder (**MRNN should be executed on a separate folder**)
     - Run the following script (takes 2-7 days depending on the machine): 
  
 ```bash
