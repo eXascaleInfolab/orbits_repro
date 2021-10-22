@@ -62,8 +62,10 @@ ___
      $ cd TestingFramework/bin/Debug/
      $ sh repro_extra_mrnn.sh
 ```
+
+- **Remark** `repro.sh` and `repro_extra_mrnn.sh` must not be executed at the same time while being in the same folder.
 ___
-## Results
+## Results 
 
 ### Figure 5 
   - Fig. 5a: 
