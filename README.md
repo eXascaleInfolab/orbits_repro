@@ -63,7 +63,7 @@ ___
      $ sh repro_extra_mrnn.sh
 ```
 
-- **Remark** `repro.sh` and `repro_extra_mrnn.sh` must not be executed at the same time while being in the same folder.
+- **Remark** `repro.sh` and `repro_extra_mrnn.sh` must not be executed at the same time while being in the same repository copy.
 ___
 ## Results 
 
