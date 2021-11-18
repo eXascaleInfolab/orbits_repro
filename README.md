@@ -1,9 +1,11 @@
-# Reproducibility Repository for ORBITS <img img align="center" width="50" height="50" src="orbits_logo.png" >
+# Reproducibility Repository for ORBITS <img img align="center" width="50" height="50" src="orbits_logo.png">
 
+- **Paper**: Mourad Khayati, Ines Arous, Zakhar Tymchenko and Philippe Cudré-Mauroux: [ORBITS: Online Recovery of Missing Values in Multiple Time Series Streams](http://vldb.org/pvldb/vol14/p294-khayati.pdf). PVLDB 2021.
 - **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, SPIRIT, SAGE, OGDImpute, pcaMME, TKCM and M-RNN. 
 - **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu and soccer. 
 - **Scenarios**: The benchmark will execute the full set of 11 recovery scenarios and report the recovery error (RMSE, MSE and MAE) and correlation (Pearson and Spearman). 
 A detailed description of the recovery scenarios can be found [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/README.md).
+- **News**: This code has passed the [VLDB reproducibilty test](http://vldb.org/pvldb/reproducibility/).
 
 <!--
 <sup>*</sup>disabled by default as it takes a couple of days to run.
