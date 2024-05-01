@@ -53,14 +53,14 @@ ___
 
 - We provide three different scripts to reproduce the experiments. In case you are using the same machine to reproduce the results, the three scripts should be executed sequentially. 
 
-1. The results and plots of all techniques, except MRNN (which takes too long), can be obtained by running the following script (takes ~3 days): 
+1. The results and plots of all techniques, except MRNN, can be obtained by running the following script (takes ~3 days): 
 
 ```bash
     $ cd TestingFramework/bin/Debug/
     $ sh repro.sh
 ```
 
-2. The results of MRNN can be obtained by running the following script (takes 2-7 days depending on the machine): 
+2. The results of MRNN can be obtained by running the following script (takes 2-7 days, depending on the machine): 
 
  
 ```bash
