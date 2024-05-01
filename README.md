@@ -2,10 +2,10 @@
 
 - **Paper**: Mourad Khayati, Ines Arous, Zakhar Tymchenko and Philippe Cudré-Mauroux: [ORBITS: Online Recovery of Missing Values in Multiple Time Series Streams](http://vldb.org/pvldb/vol14/p294-khayati.pdf). PVLDB 2021.
 - **Algorithms**: The benchmark evaluates all the algorithms mentioned in the paper: ORBITS, [SPIRIT](https://dl.acm.org/doi/10.5555/1083592.1083674), [SAGE](https://ieeexplore.ieee.org/document/8417980), [OGDImpute](https://proceedings.mlr.press/v37/anava15.html), [pcaMME](https://mitliagkas.github.io/papers/erasures2014long.pdf), [TKCM](https://openproceedings.org/2017/conf/edbt/paper-112.pdf) and [M-RNN](https://ieeexplore.ieee.org/abstract/document/8485748).
-- **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu and soccer. 
+- **Datasets**: The benchmark evaluates all the datasets used in the paper: gas (drfit10), motion, bafu, and soccer. 
 - **Scenarios**: The benchmark will execute the full set of 11 recovery scenarios and report the recovery error (RMSE, MSE and MAE) and correlation (Pearson and Spearman). 
 A detailed description of the recovery scenarios can be found [here](https://github.com/eXascaleInfolab/orbits/blob/master/TestingFramework/README.md).
-- **News**: This code has passed the [VLDB reproducibilty test](http://vldb.org/pvldb/reproducibility/).
+- **News**: This code is mentioned in the  [VLDB reproducibility highlights](http://vldb.org/pvldb/reproducibility/).
 
 <!--
 <sup>*</sup>disabled by default as it takes a couple of days to run.
@@ -19,12 +19,12 @@ ___
 
 - Ubuntu 18 or 20 (including Ubuntu derivatives, e.g., Xubuntu).
 - Clone this repository: https://github.com/eXascaleInfolab/orbits_repro .
-- Mono: Install mono from https://www.mono-project.com/download/stable/ (takes few minutes).
+- Mono: Install mono from https://www.mono-project.com/download/stable/ (takes a few minutes).
 
 ___
 ## Build
 
-- Build the Testing Framework using the installation script located in the root folder (takes few minutes):
+- Build the Testing Framework using the installation script located in the root folder (takes a few minutes):
 ```bash
     $ sh install_linux.sh
 ```
